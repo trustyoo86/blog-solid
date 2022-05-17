@@ -1,4 +1,9 @@
 import type { Component } from 'solid-js';
+import { Routes, Route, Link } from 'solid-app-router';
+import { lazy } from 'solid-js';
+
+const About = lazy(() => import('./pages/About'));
+// import About from './pages/About';
 
 import logo from './logo.svg';
 import styles from './App.module.css';
@@ -19,7 +24,11 @@ const App: Component = () => {
         >
           Learn Solid
         </a>
+        <Link href="/about">About</Link>
       </header>
+      <Routes>
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 };

@@ -7,11 +7,13 @@ const About = lazy(() => import('./pages/About'));
 
 import logo from './logo.svg';
 import styles from './App.module.css';
+import Header from './components/Header';
+import Home from './pages/Home';
 
 const App: Component = () => {
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
+    <div>
+      {/* <header class={styles.header}>
         <img src={logo} class={styles.logo} alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -25,8 +27,10 @@ const App: Component = () => {
           Learn Solid
         </a>
         <Link href="/about">About</Link>
-      </header>
+      </header> */}
+      <Header />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </div>
